@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlLogics version="1.1">
+	<tlLogic id="69227168" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69249210" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69387071" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69421277" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69515842" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69538856" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrr"/>
+	</tlLogic>
+</tlLogics>

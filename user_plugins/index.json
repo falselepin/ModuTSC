@@ -1,0 +1,21 @@
+{
+  "plugins": {
+    "test_single": {
+      "kind": "orchestrator",
+      "file": "orchestrator\\test_single.py",
+      "name": "test_single",
+      "author": "",
+      "description": "",
+      "status": "valid",
+      "methods": [
+        "setup",
+        "warmup",
+        "episode",
+        "evaluate",
+        "save",
+        "load"
+      ],
+      "config_keys": []
+    }
+  }
+}

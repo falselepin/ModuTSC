@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlLogics version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tllogic_file.xsd">
+	<tlLogic id="69227168" type="static" programID="0" offset="0">
+		<phase duration="4" state="GGrrrrGrrrrrrrGrrrrrrrGGrrrr"/>
+		<phase duration="25" state="GGGGGGGrrrrrrrGrrrrrrrGGGGGG"/>
+		<phase duration="15" state="GGrrrrGGGGGGGGGGGGGGGGGGrrrr"/>
+	</tlLogic>
+	<tlLogic id="69249210" type="static" programID="0" offset="0">
+		<phase duration="4" state="GrrrrrrGGrrrrrrrrrr"/>
+		<phase duration="60" state="GGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="69387071" type="static" programID="0" offset="0">
+		<phase duration="4" state="GrrrrrrrGGrrrrGrrrrrrrGGrrrr"/>
+		<phase duration="10" state="GrrrrrrrGGGGGGGrrrrrrrGGGGGG"/>
+		<phase duration="10" state="GGGGGGGGGGrrrrGGGGGGGGGGrrrr"/>
+	</tlLogic>
+	<tlLogic id="69421277" type="static" programID="0" offset="0">
+		<phase duration="4" state="GGrrrrrrrGGGrrrrrrGGrrrrrrrGGrrrrrrr"/>
+		<phase duration="10" state="GGrrGGGGGGGGrrrrrrGGrrrGGGGGGrrrrrrr"/>
+		<phase duration="10" state="GGGGrrrrrGGGrrrrrrGGGGGrrrrGGrrrrrrr"/>
+		<phase duration="25" state="GGrrrrrrrGGGrrGGGGGGrrrrrrrGGrrGGGGG"/>
+		<phase duration="15" state="GGrrrrrrrGGGGGrrrrGGrrrrrrrGGGGrrrrr"/>
+	</tlLogic>
+	<tlLogic id="69515842" type="static" programID="0" offset="0">
+		<phase duration="4" state="GGrrrrrrGGrrrrrrGGrrrrrrGGrrrrrr"/>
+		<phase duration="10" state="GGrrGGGGGGrrrrrrGGrrGGGGGGrrrrrr"/>
+		<phase duration="10" state="GGGGrrrrGGrrrrrrGGGGrrrrGGrrrrrr"/>
+		<phase duration="25" state="GGrrrrrrGGrrGGGGGGrrrrrrGGrrGGGG"/>
+		<phase duration="15" state="GGrrrrrrGGGGrrrrGGrrrrrrGGGGrrrr"/>
+	</tlLogic>
+	<tlLogic id="69538856" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGG"/>
+	</tlLogic>
+</tlLogics>

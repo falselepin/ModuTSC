@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlLogics version="1.1">
+	<tlLogic id="2200742494" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="2358086440" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="2358086443" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="2358086459" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="2358086462" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrr"/>
+	</tlLogic>
+	<tlLogic id="269388345" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="269388769" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="269388771" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="269390046" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="269390069" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="344050122" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="361142995" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075688776" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075688777" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075688778" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075688779" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075727445" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="cluster_16298125_4757166089" type="static" programID="0" offset="0">
+		<phase duration="1" state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+</tlLogics>

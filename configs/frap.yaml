@@ -1,0 +1,81 @@
+experiment:
+  name: "frap"
+  seed: 42
+
+components:
+  observer: [frap]
+  actor: [phase]
+  reward: [composite]
+  collector: [replay]
+  algorithm: [frap]
+  orchestrator: [single]
+  environment: [sumo]
+  tracker: [console]
+
+environment:
+  plugin: "sumo"
+  config:
+    roadnet_file: "data/LosAngeles/roadnet.net.xml"
+    flow_file: "data/LosAngeles/flow_0.rou.xml"
+    gui: false
+    sim_max_time: 3600
+    decision_interval: 5
+    yellow_duration: 3
+    min_green: 5
+
+observer:
+  plugin: "frap"
+  config:
+    features: ["num"]
+
+actor:
+  plugin: "phase"
+  config: {}
+
+reward:
+  plugin: "composite"
+  config:
+    metrics:
+      waiting: -1.0
+    reward_norm: 1.0
+
+collector:
+  plugin: "replay"
+  config:
+    per_agent: true
+    capacity: 50000
+    batch_size: 32
+
+algorithm:
+  - plugin: "frap"
+    config:
+      lr: 0.0005
+      gamma: 0.95
+      tau: 0.01
+
+tracker:
+  plugin: "console"
+  config: {}
+
+orchestrator:
+  plugin: "single"
+  config:
+    learn_every: 1
+    sync_every: 100
+    # 0 = 不限制决策步数，回合在仿真 truncated/terminated 时结束（与 sim_max_time 等一致）
+    max_decision_steps: 0
+    # 按仿真秒汇总打一条 train loss（均值）；0 = 每次 learn 都打
+    train_log_interval_sim_sec: 300
+    epsilon: 1.0
+    epsilon_min: 0.01
+    epsilon_decay: 0.995
+
+training:
+  warmup_steps: 0
+  num_epochs: 1
+  episodes_per_epoch: 2
+
+evaluation:
+  eval_frequency: 5
+  eval_steps: 5
+  checkpoint_dir: "checkpoints/frap/"

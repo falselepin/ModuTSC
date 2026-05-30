@@ -1,0 +1,41 @@
+experiment:
+  name: "frap_new"
+  seed: 42
+
+components:
+  environment: [sumo]
+  observer: [frap]
+  actor: [phase]
+  reward: [composite]
+  collector: [replay]
+  algorithm: [frap]
+  orchestrator: [single]
+
+  # WARNING: environment/sumo not found in registry
+  # WARNING: observer/frap not found in registry
+actor:
+  plugin: "phase"
+  config:
+    max_phase: 4
+
+  # WARNING: reward/composite not found in registry
+  # WARNING: collector/replay not found in registry
+  # WARNING: algorithm/frap not found in registry
+  # WARNING: orchestrator/single not found in registry
+training:
+  warmup_steps: 200
+  num_epochs: 5
+  episodes_per_epoch: 2
+  # hooks:                         # ????????????????????
+  #   after_episode:
+  #     - method: custom_log
+  #       every: 50
+  #   after_epoch:
+  #     - method: meta_update
+  #       every: 3
+
+evaluation:
+  eval_frequency: 5
+  eval_steps: 200
+  checkpoint_dir: "checkpoints/"
+

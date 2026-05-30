@@ -1,0 +1,81 @@
+actor:
+  config:
+    max_phase: 4
+  plugin: phase
+algorithm:
+  config:
+    act_in_dim: 8
+    device: cpu
+    epsilon_decay: 0.995
+    epsilon_end: 0.01
+    epsilon_start: 1.0
+    gamma: 0.99
+    hidden_size: 64
+    lr: 0.001
+    max_lanelinks: 27
+    num_phase: 5
+    tau: 0.005
+  plugin: dqn
+collector:
+  config:
+    batch_size: 64
+    capacity: 100000
+    per_agent: false
+  plugin: replay
+components:
+  actor:
+  - phase
+  algorithm:
+  - dqn
+  collector:
+  - replay
+  environment:
+  - sumo
+  observer:
+  - frap
+  reward:
+  - composite
+environment:
+  config:
+    decision_interval: 5
+    flow_file: "D:/\u684C\u9762/ModuTSC/data/Hangzhou1/flow_0.rou.xml"
+    gui: true
+    max_lanelinks: 27
+    min_green: 5
+    num_phase: 5
+    roadnet_file: "D:/\u684C\u9762/ModuTSC/data/Hangzhou1/roadnet.net.xml"
+    sim_max_time: 3600
+    sumo_cfg: ''
+    yellow_duration: 3
+  plugin: sumo
+evaluation:
+  checkpoint_dir: checkpoints/dqn_Hangzhou1/
+  eval_frequency: 5
+  eval_steps: 200
+experiment:
+  name: dqn_Hangzhou1_bf3f2a40
+  seed: 42
+observer:
+  config:
+    features:
+    - num
+    max_lanelinks: 27
+    norm: {}
+    num_phase: 5
+  plugin: frap
+orchestrator:
+  config: {}
+  plugin: single
+reward:
+  config:
+    metrics:
+      waiting: -1.0
+    reward_norm: 1.0
+  plugin: composite
+tracker:
+  config: {}
+  plugin: console
+training:
+  episodes_per_epoch: 2
+  num_epochs: 5
+  warmup_steps: 200

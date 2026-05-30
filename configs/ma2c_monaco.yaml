@@ -1,0 +1,131 @@
+experiment:
+  name: "ma2c_monaco"
+  seed: 42
+
+components:
+  observer: [ma2c]
+  actor: [phase]
+  reward: [composite]
+  collector: [ma2c]
+  tracker: [console]
+  algorithm: [ma2c_agent]
+  orchestrator: [ma2c]
+  environment: [sumo]
+
+
+environment:
+  plugin: "sumo"
+  config:
+    roadnet_file: "data/Monaco/roadnet.net.xml"
+    flow_file: "data/Monaco/flow_0.rou.xml"
+    gui: false
+    sim_max_time: 3600
+    decision_interval: 5
+    yellow_duration: 2
+    min_green: 5
+
+
+actor:
+  plugin: "phase"
+  config: {}
+
+observer:
+  plugin: "ma2c"
+  config:
+    features: ["num", "waiting", "wait_time"]
+
+reward:
+  plugin: "composite"
+  config:
+    metrics:
+      queue: -1.0
+    reward_norm: 1.0
+
+collector:
+  plugin: "ma2c"
+  config:
+    batch_size: 40
+
+tracker:
+  plugin: "console"
+  config:
+    prefix: "ma2c"
+
+algorithm:
+  - plugin: "ma2c_agent"
+    config:
+      learning_rate: 0.0005
+      num_lstm: 64
+      n_fc_wave: 128
+      n_fc_wait: 32
+      n_fc_fp: 64
+      gamma: 0.99
+      max_grad_norm: 40
+      rmsp_alpha: 0.99
+      rmsp_epsilon: 0.00001
+      value_coef: 0.5
+
+orchestrator:
+  plugin: "ma2c"
+  config:
+    max_steps: 720
+    batch_size: 40
+    gamma: 0.99
+    coop_gamma: 0.9
+    learning_rate: 0.0005
+    critic_learning_rate: 0.0005
+    entropy_coef_init: 0.01
+    entropy_coef_min: 0.01
+    total_step: 1000000
+    num_lstm: 64
+    n_fc_wave: 128
+    n_fc_wait: 32
+    n_fc_fp: 64
+    reward_norm: 20.0
+    reward_clip: 2.0
+    rmsp_epsilon: 0.00001
+    value_coef: 0.5
+    output_dir: "output/ma2c_monaco"
+    device: "cpu"
+    neighbor_map:
+      "10026": ["9431", "9561", "cluster_9563_9597", "9531"]
+      "8794":  ["cluster_8985_9609", "9837", "9058", "cluster_9563_9597"]
+      "8940":  ["9007", "9429"]
+      "8996":  ["cluster_9389_9689", "9713"]
+      "9007":  ["9309", "8940"]
+      "9058":  ["cluster_8985_9609", "8794", "joinedS_0"]
+      "9153":  ["9643"]
+      "9309":  ["9466", "9007", "cluster_9043_9052"]
+      "9413":  ["9721", "9837"]
+      "9429":  ["cluster_9043_9052", "joinedS_1", "8940"]
+      "9431":  ["9721", "9884", "9561", "10026"]
+      "9433":  ["joinedS_1"]
+      "9466":  ["9309", "joinedS_0", "cluster_9043_9052"]
+      "9480":  ["8996", "9713"]
+      "9531":  ["joinedS_1", "10026"]
+      "9561":  ["cluster_9389_9689", "10026", "9431", "9884"]
+      "9643":  ["9153"]
+      "9713":  ["9721", "9884", "8996"]
+      "9721":  ["9431", "9713", "9413"]
+      "9837":  ["9413", "8794", "cluster_8985_9609"]
+      "9884":  ["9713", "9431", "cluster_9389_9689", "9561"]
+      "cluster_8751_9630":  ["cluster_9389_9689"]
+      "cluster_8985_9609":  ["9837", "8794", "9058"]
+      "cluster_9043_9052":  ["cluster_9563_9597", "9466", "9309", "10026", "joinedS_1"]
+      "cluster_9389_9689":  ["9884", "9561", "cluster_8751_9630", "8996"]
+      "cluster_9563_9597":  ["10026", "8794", "joinedS_0", "cluster_9043_9052"]
+      "joinedS_0":  ["9058", "cluster_9563_9597", "9466"]
+      "joinedS_1":  ["9531", "9429"]
+    lr_decay: constant
+    entropy_decay: constant
+    lr_min: 0.0005
+
+training:
+  warmup_steps: 0
+  num_epochs: 1400
+  episodes_per_epoch: 1
+
+evaluation:
+  eval_frequency: 20
+  eval_steps: 720
+  checkpoint_dir: "checkpoints/ma2c_monaco/"

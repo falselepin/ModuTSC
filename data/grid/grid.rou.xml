@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE routes [
+    <!ELEMENT routes (flow+)>
+    <!ELEMENT flow (vehicle?)>
+    <!ATTLIST flow id ID #REQUIRED>
+    <!ATTLIST flow type CDATA #IMPLIED>
+    <!ATTLIST flow begin CDATA #REQUIRED>
+    <!ATTLIST flow end CDATA #REQUIRED>
+    <!ATTLIST flow probability CDATA #IMPLIED>
+    <!ATTLIST flow number CDATA #IMPLIED>
+    <!ATTLIST flow from CDATA #REQUIRED>
+    <!ATTLIST flow to CDATA #REQUIRED>
+    <!ELEMENT vehicle EMPTY>
+    <!ATTLIST vehicle id CDATA #REQUIRED>
+    <!ATTLIST vehicle depart CDATA #REQUIRED>
+    <!ATTLIST vehicle route CDATA #REQUIRED>
+]>
+<routes>
+    <flow id="flow_ew" begin="0" end="3600" probability="0.1">
+        <route edges="1fi 2si 2si 2si 2oi"/>
+    </flow>
+    <flow id="flow_we" begin="0" end="3600" probability="0.1">
+        <route edges="2fi 1si 1si 1si 1oi"/>
+    </flow>
+    <flow id="flow_ns" begin="0" end="3600" probability="0.1">
+        <route edges="3fi 0si 0si 0si 0oi"/>
+    </flow>
+    <flow id="flow_sn" begin="0" end="3600" probability="0.1">
+        <route edges="0fi 3si 3si 3si 3oi"/>
+    </flow>
+</routes>

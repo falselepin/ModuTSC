@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文复现 - 交通信号控制算法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 24px;
+        }
+        .header-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: #38bdf8;
+            clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 75%);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .card.active {
+            border-color: #3b82f6;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .card-tag {
+            font-size: 12px;
+            color: #bfdbfe;
+            background-color: #1e3a8a;
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+        .card-subtitle {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        .card-desc {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        .tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .tag {
+            background-color: #e2e8f0;
+            color: #0f172a;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .meta-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        .meta-row span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .meta-row span::before {
+            content: "📁";
+        }
+        .meta-row .env::before {
+            content: "🌿";
+        }
+        .card-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        .btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+        .btn-success {
+            background-color: #059669;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-title">
+        <span style="color: #38bdf8;">|</span> 论文复现
+    </div>
+    <div class="header-subtitle">一键复现经典算法，可自由修改配置参数</div>
+
+    <div class="section-title">已实现的论文算法</div>
+
+    <div class="card-grid">
+        <!-- Card 1: Fixed-Time -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Fixed-Time</div>
+                <div class="card-tag">基线方法</div>
+            </div>
+            <div class="card-subtitle">固定配时信号控制 (Fixed-Time)</div>
+            <div class="card-desc">经典交通工程方法，—</div>
+            <div class="tags">
+                <span class="tag">规则</span>
+                <span class="tag">基线</span>
+            </div>
+            <div class="meta-row">
+                <span>Monaco</span>
+                <span class="env">rule</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 2: MaxPressure -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">MaxPressure</div>
+                <div class="card-tag">Transportation Research</div>
+            </div>
+            <div class="card-subtitle">MaxPressure: 基于压力的自适应信号控制</div>
+            <div class="card-desc">Varaiya, P. · 2013</div>
+            <div class="tags">
+                <span class="tag">规则</span>
+                <span class="tag">自适应</span>
+            </div>
+            <div class="meta-row">
+                <span>Monaco</span>
+                <span class="env">rule</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 3: SOTL -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">SOTL</div>
+                <div class="card-tag">基线方法</div>
+            </div>
+            <div class="card-subtitle">SOTL: 自适应信号控制</div>
+            <div class="card-desc">经典自适应方法，—</div>
+            <div class="tags">
+                <span class="tag">规则</span>
+                <span class="tag">自适应</span>
+            </div>
+            <div class="meta-row">
+                <span>Monaco</span>
+                <span class="env">rule</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 4: DQN -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">DQN</div>
+                <div class="card-tag">Nature / 经典方法</div>
+            </div>
+            <div class="card-subtitle">深度 Q 网络在交通信号控制中的应用</div>
+            <div class="card-desc">Mnih et al. / 经典 DRL 方法 · 2015</div>
+            <div class="tags">
+                <span class="tag">DRL</span>
+                <span class="tag">值函数</span>
+            </div>
+            <div class="meta-row">
+                <span>Hangzhou1</span>
+                <span class="env">single</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 5: CoLight -->
+        <div class="card active">
+            <div class="card-header">
+                <div class="card-title">CoLight</div>
+                <div class="card-tag">AAAI 2019</div>
+            </div>
+            <div class="card-subtitle">CoLight: 基于注意力机制的多路口协作信号控制</div>
+            <div class="card-desc">Wei, H. et al. · 2019</div>
+            <div class="tags">
+                <span class="tag">DRL</span>
+                <span class="tag">注意力</span>
+                <span class="tag">多路口</span>
+            </div>
+            <div class="meta-row">
+                <span>Hangzhou1</span>
+                <span class="env">single</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 6: FRAP -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">FRAP</div>
+                <div class="card-tag">CIKM 2019</div>
+            </div>
+            <div class="card-subtitle">FRAP: 基于相位竞争关系的信号控制</div>
+            <div class="card-desc">Zheng, G. et al. · 2019</div>
+            <div class="tags">
+                <span class="tag">DRL</span>
+                <span class="tag">相位竞争</span>
+                <span class="tag">多路口</span>
+            </div>
+            <div class="meta-row">
+                <span>LosAngeles</span>
+                <span class="env">single</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 7: MA2C -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">MA2C</div>
+                <div class="card-tag">AAAI 2020</div>
+            </div>
+            <div class="card-subtitle">MA2C: 多智能体 Actor-Critic 协作信号控制</div>
+            <div class="card-desc">Chu, T. et al. · 2020</div>
+            <div class="tags">
+                <span class="tag">MARL</span>
+                <span class="tag">多智能体</span>
+                <span class="tag">Actor-Critic</span>
+            </div>
+            <div class="meta-row">
+                <span>grid</span>
+                <span class="env">ma2c</span>
+            </div>
+            <div class="card-buttons">
+                <button class="btn btn-primary">
+                    📄 查看配置
+                </button>
+                <button class="btn btn-success">
+                    ▶️ 复现实验
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+experiment:
+  name: "ma2c_grid"
+  seed: 42
+
+components:
+  observer: [ma2c]
+  actor: [phase]
+  reward: [composite]
+  collector: [ma2c]
+  algorithm: [ma2c_agent]
+  orchestrator: [ma2c]
+  environment: [sumo]
+
+environment:
+  plugin: "sumo"
+  config:
+    roadnet_file: "data/grid/grid.net.xml"
+    flow_file: "data/grid/grid.rou.xml"
+    gui: false
+    sim_max_time: 3600
+    decision_interval: 5
+
+observer:
+  plugin: "ma2c"
+  config:
+    features: ["num", "waiting", "wait_time"]
+
+actor:
+  plugin: "phase"
+  config: {}
+
+reward:
+  plugin: "composite"
+  config:
+    metrics:
+      waiting: -1.0
+      queue: -0.2
+    reward_norm: 1.0
+
+collector:
+  plugin: "ma2c"
+  config:
+    batch_size: 120
+
+algorithm:
+  - plugin: "ma2c_agent"
+    config:
+      learning_rate: 5e-4
+      critic_learning_rate: 2.5e-4
+      num_lstm: 64
+      n_fc_wave: 128
+      n_fc_wait: 32
+      n_fc_fp: 32
+      gamma: 0.99
+      max_grad_norm: 40
+      rmsp_alpha: 0.99
+      rmsp_epsilon: 5e-5
+      value_coef: 1.0
+
+orchestrator:
+  plugin: "ma2c"
+  config:
+    max_steps: 720
+    batch_size: 120
+    gamma: 0.99
+    coop_gamma: 0.75
+    learning_rate: 5e-4
+    critic_learning_rate: 2.5e-4
+    entropy_coef_init: 0.01
+    entropy_coef_min: 0.0
+    total_step: 1000000
+    num_lstm: 64
+    n_fc_wave: 128
+    n_fc_wait: 32
+    n_fc_fp: 32
+    reward_norm: 1.0
+    reward_clip: 2.0
+    value_coef: 1.0
+    device: "cuda"
+
+training:
+  warmup_steps: 100
+  num_epochs: 200
+  episodes_per_epoch: 1
+
+evaluation:
+  eval_frequency: 10
+  eval_steps: 3600
+  checkpoint_dir: "checkpoints/ma2c_grid/"

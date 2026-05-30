@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlLogics version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tllogic_file.xsd">
+	<tlLogic id="2200742494" type="static" programID="0" offset="0">
+		<phase duration="4" state="GGrrrrrrrrrrrrrGGGrrrrrrGrrrrrrrrrrrGGGrrrrrr"/>
+		<phase duration="40" state="GGrrrrrrrrrGGGGGGGrrrrrrGrrrrrrrrrGGGGGrrrrrr"/>
+		<phase duration="50" state="GGGGGGGGGGGrrrrGGGrrrrrrGGGGGGGGGGrrGGGrrrrrr"/>
+		<phase duration="25" state="GGrrrrrrrrrrrrrGGGGGGGGGGrrrrrrrrrrrGGGrrrrrr"/>
+		<phase duration="10" state="GGrrrrrrrrrrrrrGGGrrrrrrGrrrrrrrrrrrGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="2358086440" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="2358086443" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="2358086459" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="2358086462" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGG"/>
+	</tlLogic>
+	<tlLogic id="269388345" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="269388769" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="269388771" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="269390046" type="static" programID="0" offset="0">
+		<phase duration="4" state="rrrrrrrrrrrrrrrrrrrrGGGGGGGGrrr"/>
+		<phase duration="61" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGrrr"/>
+		<phase duration="31" state="rrrrrrrrrrrrrrrrrrrrGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="269390069" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="344050122" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="361142995" type="static" programID="0" offset="0">
+		<phase duration="4" state="GrrrrrrrrrrrrrrrrrrrrrGGGGrrrrrrGGGGrrrrrrGrrrrrrrrrrrrrrrrr"/>
+		<phase duration="55" state="GrrrrrrrrrrrrrrrrGGGGGGGGGrrrrrrGGGGrrrrrrGrrrrrrrrrrrrrrrrG"/>
+		<phase duration="40" state="GGGGGGGGGGGGGGGGGrrrrrGGGGrrrrrrGGGGrrrrrrGGGGGGGGGGGGGGGGGr"/>
+		<phase duration="40" state="GrrrrrrrrrrrrrrrrrrrrrGGGGrrrrrrGGGGGGGGGGGrrrrrrrrrrrrrrrrr"/>
+		<phase duration="20" state="GrrrrrrrrrrrrrrrrrrrrrGGGGGGGGGGGGGGrrrrrrGrrrrrrrrrrrrrrrrr"/>
+	</tlLogic>
+	<tlLogic id="4075688776" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="4075688777" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="4075688778" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="4075688779" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="4075727445" type="static" programID="0" offset="0">
+		<phase duration="30" state="GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"/>
+	</tlLogic>
+	<tlLogic id="cluster_16298125_4757166089" type="static" programID="0" offset="0">
+		<phase duration="4" state="GGGrrrrrrrrrrrGGrrrrrrrrrrrrGGGrrrrrrrrrrrGGGrrrrrrrrrr"/>
+		<phase duration="15" state="GGGrrrrrrrrrGGGGrrrrrrrrrGGGGGGrrrrrrrrrrrGGGrrrrrrrrrr"/>
+		<phase duration="32" state="GGGGGGGGGGGGrrGGGGGGGGGGGrrrGGGrrrrrrrrrrrGGGrrrrrrrrrr"/>
+		<phase duration="20" state="GGGrrrrrrrrrrrGGrrrrrrrrrrrrGGGrrrrrrrrrrrGGGGGGGGGGGGG"/>
+		<phase duration="10" state="GGGrrrrrrrrrrrGGrrrrrrrrrrrrGGGGGGGGGGGGGGGGGrrrrrrrrrr"/>
+	</tlLogic>
+</tlLogics>

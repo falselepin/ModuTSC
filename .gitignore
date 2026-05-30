@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+.DS_Store
+.vscode/
+output/
+checkpoints/
+results/
+*.log
+*.txt

@@ -1,0 +1,74 @@
+experiment:
+  name: "igrl_monaco_smoke"
+  seed: 42
+
+components:
+  observer: [igrl_graph]
+  actor: [phase]
+  reward: [composite]
+  collector: [replay]
+  algorithm: [igrl]
+  orchestrator: [single]
+  environment: [sumo]
+
+environment:
+  plugin: "sumo"
+  config:
+    roadnet_file: "data/Monaco/roadnet.net.xml"
+    flow_file: "data/Monaco/flow_0.rou.xml"
+    gui: false
+    sim_max_time: 3600
+    decision_interval: 5
+    yellow_duration: 3
+    min_green: 5
+
+observer:
+  plugin: "igrl_graph"
+  config:
+    features: ["num", "waiting", "wait_time", "speed"]
+
+actor:
+  plugin: "phase"
+  config: {}
+
+reward:
+  plugin: "composite"
+  config:
+    metrics:
+      waiting: -1.0
+    reward_norm: 20.0
+
+collector:
+  plugin: "replay"
+  config:
+    capacity: 6000
+    batch_size: 64
+
+algorithm:
+  - plugin: "igrl"
+    config:
+      lr: 0.0001
+      gamma: 0.95
+      tau: 0.005
+      hidden_size: 128
+      use_gcn: false
+
+orchestrator:
+  plugin: "single"
+  config:
+    learn_every: 1
+    sync_every: 100
+    max_steps: 36
+    epsilon: 1.0
+    epsilon_min: 0.01
+    epsilon_decay: 0.995
+
+training:
+  warmup_steps: 50
+  num_epochs: 2
+  episodes_per_epoch: 1
+
+evaluation:
+  eval_frequency: 10
+  eval_steps: 20
+  checkpoint_dir: "checkpoints/igrl_monaco/"

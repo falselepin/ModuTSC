@@ -1,0 +1,11 @@
+<configuration>
+  <input>
+    <net-file value="roadnet.net.xml"/>
+    <route-files value="flow_0.rou.xml"/>
+    <additional-files value="exp.add.xml"/>
+  </input>
+  <time>
+    <begin value="0"/>
+    <end value="3600"/>
+  </time>
+</configuration>

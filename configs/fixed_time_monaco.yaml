@@ -1,0 +1,65 @@
+experiment:
+  name: "fixed_time_monaco_smoke"
+  seed: 42
+
+components:
+  observer: [standard]
+  actor: [phase]
+  reward: [composite]
+  collector: [replay]
+  algorithm: [fixed_time, max_pressure, sotl]
+  orchestrator: [single, rule]
+  environment: [sumo]
+
+environment:
+  plugin: "sumo"
+  config:
+    roadnet_file: "data/Monaco/roadnet.net.xml"
+    flow_file: "data/Monaco/flow_0.rou.xml"
+    gui: false
+    sim_max_time: 3600
+    decision_interval: 5
+    yellow_duration: 3
+    min_green: 5
+
+observer:
+  plugin: "standard"
+  config:
+    features: ["num", "waiting", "wait_time"]
+
+actor:
+  plugin: "phase"
+  config: {}
+
+reward:
+  plugin: "composite"
+  config:
+    metrics:
+      waiting: -1.0
+    reward_norm: 20.0
+
+collector:
+  plugin: "replay"
+  config:
+    capacity: 6000
+    batch_size: 64
+
+algorithm:
+  - plugin: "fixed_time"
+    config:
+      interval: 10
+
+orchestrator:
+  plugin: "rule"
+  config:
+    max_steps: 72
+
+training:
+  warmup_steps: 0
+  num_epochs: 1
+  episodes_per_epoch: 1
+
+evaluation:
+  eval_frequency: 10
+  eval_steps: 20
+  checkpoint_dir: "checkpoints/fixed_time/"
